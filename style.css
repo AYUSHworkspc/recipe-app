@@ -1,0 +1,174 @@
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+body{
+    background-color: snow;
+    
+} 
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: sandybrown;
+    
+    }
+    nav h1{
+        font-size: xx-large;
+        letter-spacing: 1px;
+        
+    }
+    nav form {
+        display: flex;
+        justify-content: center;
+    }
+    nav form input[type='text']{
+margin-right: 20px;
+    flex-grow: 1;
+    }
+    nav form input[type='text'],button[type='submit']{
+      border: none;
+      font-size: 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px  orangered;
+
+    }
+    form button[type='submit']{
+        cursor: pointer;
+        background-color: yellow;
+        border: solid olivedrab;
+        padding: 5px;
+        font-weight: 900;
+    
+    }
+    form button[type='submit']:hover{
+        background-color: blueviolet;
+       padding: 10px;  
+       transition: background-color 0.8s ease-in-out; }
+    
+    /*responsive code  for navbar    */
+    @media screen and (max-width: 600px) {
+        header nav {
+            flex-direction: column;
+
+        }
+        header nav form{
+            margin-top: 10px;
+            width: 80%;
+
+        }
+    }
+
+    /* main container styling*/
+    .recipe-container{
+        margin-top: 25px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit , minmax(300px, 1fr));
+        grid-gap:40px ;
+        width: 80%;
+        margin: 10px auto;
+        padding: 20px;
+        background-color: rgba(135, 207, 235, 0.315);
+        /*max-width: 250px;  ye apply karne par grid hat jaaaaa raha hain*/
+    
+    }
+    .recipe{
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        border: solid 4px rgba(137, 43, 226, 0.39) ;
+        transition: transform 0.5s ease-in-out ;
+    }
+    .recipe:hover{
+        transform:scale(1.055)
+    }
+
+
+
+
+
+    .recipe button{
+        font-size: 25px;
+        background-color: rgba(255, 68, 0, 0.603);
+     padding: 5 px;
+     cursor:pointer;
+     
+     margin:  5px;
+
+    }
+    .recipe button:hover{
+        background-color: blueviolet;
+       padding: 6px;  
+       border-radius: 25px;
+      
+        }
+
+
+/* Recipe details wala div jo recipee par click karne par use hoga*/
+/* ye pop up function call hone ke baad call hoga*/
+
+.recipe-details{     
+    display: none;
+    position: absolute;
+    top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+-webkit-transform: translate(-50%,-50%);
+background-color: lightsalmon;
+width: 40%;
+height: 60%;
+border-radius: 25px;
+font-size: 20px;
+transition: all 0.5s ease-in-out;
+overflow-y: scroll;
+
+}
+/* scroll bar apply karna on reccipe details.*/
+.recipe-container::-webkit-scrollbar{
+    width: 10px;
+    background-color: blue;
+}
+.recipe-details::-webkit-scrollbar-thumb{
+    background: blue;
+    border: 10px;
+    --webkit-border-radius:12px;
+
+}
+
+
+
+/* now adding the css at recipie details which is mafde through js */
+.recipe-details-content{
+    padding: 35px;
+}
+.recipename{
+    font-size: 55px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+.ingredientlist{
+    gap: 25px;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px ;
+
+}
+.recepi-close-btn{
+
+    position: absolute;
+    top: 20px;
+    left:20px;
+    background-color: snow;
+    padding: 0.8vh;
+    border-radius: 1vh;
+    border: solid yellow 0.5vh;
+
+}
